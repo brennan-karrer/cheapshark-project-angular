@@ -13,6 +13,8 @@ angular.module('CheapSharkAPP')
     
     $scope.deals_list = [];
     
+    $scope.range_numbers = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
     $scope.FetchDataFactory.fetchData().then(function successCallback(response) {
         
         /* Response data has come back successfully, proceed with calculations */
@@ -26,7 +28,7 @@ angular.module('CheapSharkAPP')
             // Push all of the deals objects to the $scope.deals_list array
             $scope.deals_list.push(response.data[i]);
             
-            console.log(response.data[i]);
+            //console.log(response.data[i]);
           }
           
         } else {
@@ -34,4 +36,26 @@ angular.module('CheapSharkAPP')
         }
         
     });
-  }]);
+  }]).filter('rangeFilter', function() {
+    return function(items, range_min, range_max) {
+
+        var filtered = [];
+        var min = parseInt(range_min);
+        var max = parseInt(range_max);
+        // If time is with the range
+        angular.forEach(items, function(item) {
+          console.log(item);
+          console.log(item.score);
+          console.log(min);
+          console.log(max);
+            if( item.score >= min && item.score <= max ) {
+                filtered.push(item);
+            }
+        });
+        return filtered;
+    };
+}).filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
+  };
+});

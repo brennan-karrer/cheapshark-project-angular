@@ -1,6 +1,16 @@
 <div class="container">
-  <div class="" ng-repeat="deal in deals_list">
-    
+  
+  <div class="" ng-repeat="n in range_numbers | reverse">
+    {{n}}
+    {{range_numbers.n}}
+    <div class="" ng-repeat="deal in deals_list | rangeFilter:n:n+10">
+        <div class="">{{ deal.internalName }}</div>
+        <div class="">{{ deal.metacriticScore }}</div>
+    </div>
+    <hr>
+    <br>
   </div>
+  
+  
   
 </div><!--// [end] container -->

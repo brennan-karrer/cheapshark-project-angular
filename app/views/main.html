@@ -1,16 +1,11 @@
 <div class="container">
-  
-  <div class="" ng-repeat="n in range_numbers | reverse">
-    {{n}}
-    {{range_numbers.n}}
-    <div class="" ng-repeat="deal in deals_list | rangeFilter:n:n+10">
-        <div class="">{{ deal.internalName }}</div>
-        <div class="">{{ deal.metacriticScore }}</div>
-    </div>
-    <hr>
-    <br>
-  </div>
-  
-  
-  
+  <div class="individual-range-container" ng-repeat="n in range_numbers | reverse">
+    
+    <div class="individual-range-title" ng-click="sortType = 'title'; reverseSort = !reverseSort;">Score Group: {{n}}</div>
+    <div class="individual-deal" ng-repeat="deal in deals_list | rangeFilter:n:n+10 | orderBy:sortType:reverseSort">
+        <div class="individual-deal-title">{{ deal.title }}</div>
+        <div class="individual-deal-score">{{ deal.metacriticScore }}</div>
+    </div><!--// [end] individual-deal -->
+    
+  </div><!--// [end] individual-range-container -->
 </div><!--// [end] container -->

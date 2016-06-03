@@ -1,6 +1,6 @@
 # cheapshark-project-angular
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
+Generated with [yo angular generator](https://github.com/yeoman/generator-angular) for ease of scaffolding. Set up the shell in order to dive right into the bulk of coding.
 version 0.15.1.
 
 ## Build & development

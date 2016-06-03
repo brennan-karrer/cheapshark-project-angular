@@ -1,6 +1,7 @@
 <div class="container">
   <div class="individual-range-container" ng-repeat="n in range_numbers | reverse">
     
+    <!-- ngClick to reverse the sorting if you wish to see the list of names in descending order -->
     <div class="individual-range-title" ng-click="sortType = 'title'; reverseSort = !reverseSort;">Score Group: {{n}}</div>
     <div class="individual-deal" ng-repeat="deal in deals_list | rangeFilter:n:n+10 | orderBy:sortType:reverseSort">
         <div class="individual-deal-title">{{ deal.title }}</div>

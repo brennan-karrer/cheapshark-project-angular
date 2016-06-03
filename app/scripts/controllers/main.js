@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name CharpSharkAPP.controller:MainCtrl
+ * @name CheapSharkAPP.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the CharpSharkAPP
+ * Controller of the CheapSharkAPP
  */
 angular.module('CheapSharkAPP')
   .controller('MainCtrl', ['$scope', 'FetchDataFactory', function ($scope, FetchDataFactory) {
